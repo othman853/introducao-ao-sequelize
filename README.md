@@ -50,10 +50,10 @@ Depois de algumas conversas, modelamos a primeira tabela do sistema com as infor
 +-----------------------+
 |        Pessoa         |
 +-----------------------+
-|id: int primary key    |
+|id: uuid primary key   |
 |nome: varchar(200)     |
-|idade: int(3)          |
-|peso: double           |
+|idade: int             |
+|peso: float            |
 +-----------------------+
 ```
 
@@ -75,7 +75,7 @@ exemplo:
 Criar novas linhas:
 
 ```sql
-INSERT INTO Pessoa VALUES ("Silva", 30, 73.3);
+INSERT INTO Pessoa (nome, idade, peso) VALUES ("Silva", 30, 73.3);
 ```
 
 Deletar linhas existentes:
