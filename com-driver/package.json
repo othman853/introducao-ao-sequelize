@@ -1,0 +1,17 @@
+{
+  "name": "com-driver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "db:start": "docker run --rm --name exemplo-driver-pg -p 5432:5432 -e POSTGRES_PASSWORD=baita_segredo -d postgres",
+    "db:create": "docker exec exemplo-driver-pg psql -U postgres -w -c \"CREATE DATABASE exemplo_driver\"",
+    "db:stop": "docker stop exemplo-driver-pg"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^7.4.3"
+  }
+}

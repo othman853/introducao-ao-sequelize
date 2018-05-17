@@ -89,5 +89,23 @@ comandos para o banco em questão. A pergunta agora é:
 
 > Como fazer um programa que consiga se conectar ao banco e consiga executar o SQL que precisamos para cadastrar pessoas?
 
-Depois de pesquisar um tempo, nosso time concluiu que era necessário um driver de conexão ao Postgres para fazer isso.
+__Os Drivers SQL__
+
+Depois de pesquisar um tempo, nosso time concluiu que era necessário um driver de conexão ao Postgres para fazer isso. Encontramos o módulo
+[pg](https://www.npmjs.com/package/pg) que serve exatamente como um driver de conexão ao Postgres.
+
+Fizemos um projeto para testar este módulo, este projeto está na pasta `com-driver`.
+
+Apesar de o módulo `pg` ter sido muito bem desenvolvido, ele ainda assim foi desenhado para ser bastante genérico e abranger o maior número
+de casos de uso possíveis. Essa generalização acaba se tornando um problema para a produtividade do nosso time, pois somente precisamos
+manipular tabelas no banco de forma direta e rápida, não precisamos de tantos outros recursos. Ao utilizar um driver diretamente, é de se
+notar, por exemplo, que:
+
+- Se torna necessário escrever várias consultas manualmente com strings gigantes
+- Temos que fazer uma quantidade imensa de código repetitivo somente para acessar o resultado de uma consulta
+- A execução de consulta traz informações desnecessárias para nossa aplicação
+
+__O Sequelize__
+
+Foi então decidido investigar o Sequelize, um ORM que pode ajudar a resolver este tipo de problema.
 
