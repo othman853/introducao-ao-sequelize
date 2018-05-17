@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "db:start": "docker run --rm --name exemplo-sequelize -p 5435:5435 -e POSTGRES_PASSWORD=baita_segredo -d postgres",
-    "db:create": "docker exec exemplo-driver-pg psql -U postgres -w -c \"CREATE DATABASE exemplo_sequelize\"",
+    "db:start": "docker run --rm --name exemplo-sequelize -p 5435:5432 -e POSTGRES_PASSWORD=baita_segredo -d postgres",
+    "db:create": "docker exec exemplo-sequelize psql -U postgres -w -c \"CREATE DATABASE exemplo_sequelize\"",
     "db:stop": "docker stop exemplo-sequelize"
   },
   "author": "",
