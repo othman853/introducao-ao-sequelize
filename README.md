@@ -65,14 +65,29 @@ Para dar vida ao cadastro de pessoas, temos duas opções:
 Se decidiu pela segunda opção e, por isso, nossa missão agora é criar uma aplição que se conecte à um banco e resolva o problema da
 gerência.
 
-Criando novas linhas:
+__Ligando as pontas__
+
+À partir deste momento, o time começa a pensar em como ligar as duas pontas.
+
+Vamos começar pelo banco de dados. Sabemos que é preciso SQL para manipular registros de uma tabela, portanto, sabemos que se pode, por
+exemplo:
+
+Criar novas linhas:
 
 ```sql
 INSERT INTO Pessoa VALUES ("Silva", 30, 73.3);
 ```
 
-Deletando linhas existentes:
+Deletar linhas existentes:
 
 ```sql
 DELETE FROM Pessoa WHERE id = 1;
 ```
+
+Sabemos que, para executar esse código SQL, precisamos de um cliente SQL que se conecte à um banco de dados e nos permite enviar esses
+comandos para o banco em questão. A pergunta agora é:
+
+> Como fazer um programa que consiga se conectar ao banco e consiga executar o SQL que precisamos para cadastrar pessoas?
+
+Depois de pesquisar um tempo, nosso time concluiu que era necessário um driver de conexão ao Postgres para fazer isso.
+
